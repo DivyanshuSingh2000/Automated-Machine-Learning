@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Result</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        .custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+    </style>
+
+
+</head>
+
+<body>
+
+
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 ">
+    <table class="table table-border table-hover ">
+    <thead>
+        <tr>
+         <th>Model Name</th>
+         <th>Accuracy</th>
+      </tr>
+    </thead>
+             {% for i in km %}
+      <tr>
+          <td>{{i}}</td>
+         <td>{{di[i]}}</td>
+      </tr>
+       {% endfor %}
+    </table>
+    </div>
+</div>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Search Page</title>
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+    .container{
+        display: table;
+        text-align: center;
+        border:10px solid black;
+        margin:50px 80px 50px 80px;
+        padding:20px 20px 20px 20px
+    }
+    .input-elements{
+        margin-bottom: 20px;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Upload File And Related Data</h1>
+
+    <div class="container">
+        <form action="/review" method="POST" enctype="multipart/form-data">
+
+            <div class="mb-3 input-elements">
+                <label  class="form-label">Choose a File</label>
+                <input class="form-control" type="file" name = "ufile" id="ufile">
+              </div>
+
+              <div class="mb-3 input-elements">
+                <label class="form-label">Choose a File Type</label>
+                <select id="ftype" name="ftype" class="form-control">
+                    <option value="json">JSON</option>
+                    <option value="csv">CSV</option>
+                    <option value="excel">EXCEL</option>
+                </select>
+              </div>
+
+              <div class="mb-3 input-elements">
+                <label  class="form-label">Choose a problem Type</label>
+                <select id="ptype" name="ptype" class="form-control">
+                    <option value="reg">Regression</option>
+                    <option value="classification">Classification</option>
+                </select>
+              </div>
+
+              <div class="mb-3 input-elements">
+                <label  class="form-label">Target Feature</label>
+                <input class="form-control" type="text" name="target" id="target">
+              </div>
+
+              <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+{% endblock %}
